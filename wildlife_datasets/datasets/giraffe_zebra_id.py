@@ -4,6 +4,7 @@ from . import utils
 from .datasets_wildme import DatasetFactoryWildMe
 from .summary import summary
 
+
 class GiraffeZebraID(DatasetFactoryWildMe):
     summary = summary['GiraffeZebraID']
     url = 'https://lilawildlife.blob.core.windows.net/lila-wildlife/wild-me/gzgc.coco.tar.gz'

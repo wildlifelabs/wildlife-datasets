@@ -43,6 +43,9 @@ from .zakynthos_turtles import ZakynthosTurtles
 from .zindi_turtle_recall import ZindiTurtleRecall
 from .summary import Summary
 from .utils import get_image, load_image
+# Added by CINJ: 20241224
+from .taronga_giraffes import TarongaGiraffes
+
 
 names_all = [
     AAUZebraFish,
@@ -64,6 +67,7 @@ names_all = [
     FriesianCattle2017,
     GiraffeZebraID,
     Giraffes,
+    TarongaGiraffes,
     HappyWhale,
     HumpbackWhaleID,
     HyenaID2022,

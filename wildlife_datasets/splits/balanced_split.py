@@ -117,7 +117,7 @@ class BalancedSplit():
                         break
                 
                 # Save the clusters
-                if save_clusters_prefix is not None:
+                if (save_clusters_prefix is not None) and (clusters_saved is not None):
                     df_save = pd.DataFrame({'cluster': clusters_saved.to_numpy()}, index=df_identity.index)
                     df_save.to_csv(f'{save_clusters_prefix}_{identity}.csv')
                 

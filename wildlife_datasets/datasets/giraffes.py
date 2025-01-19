@@ -4,6 +4,7 @@ from . import utils
 from .datasets import DatasetFactory
 from .summary import summary
 
+
 class Giraffes(DatasetFactory):
     summary = summary['Giraffes']
 
@@ -27,15 +28,14 @@ class Giraffes(DatasetFactory):
         data = utils.find_images(self.root)
         folders = data['path'].str.split(os.path.sep, expand=True)
         n_folders = max(folders.columns)
-
         # Extract information from the folder structure
-        clusters = folders[n_folders-1] == 'clusters'
+        clusters = folders[n_folders-2] == 'clusters'
         data, folders = data[clusters], folders[clusters]
 
         # Finalize the dataframe
         df = pd.DataFrame({    
             'image_id': utils.create_id(data['file']),
             'path': data['path'] + os.path.sep + data['file'],
-            'identity': folders[n_folders],
+            'identity': folders[n_folders-1],
         })
         return self.finalize_catalogue(df)
